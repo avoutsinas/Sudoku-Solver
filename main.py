@@ -168,7 +168,6 @@ def sudoku_solver(sudoku):
             It contains the solution, if there is one. If there is no solution, all array entries should be -1.
     """
     
-    ### YOUR CODE HERE
     puzzle = sudoku_puzzle(sudoku)
     
     if puzzle.has_valid_start_state():
@@ -183,7 +182,7 @@ def sudoku_solver(sudoku):
 
 #***********************************************DEBUGGING-CODE*********************************************************#
 
-test_sudoku0 =np.array([
+test_sudoku1 =np.array([
  [0, 8, 0, 4, 3, 0, 0, 0, 0],
  [0, 0, 5, 0, 0, 9, 0, 0, 0],
  [6, 0, 0, 0, 8, 0, 0, 7, 0],
@@ -194,7 +193,7 @@ test_sudoku0 =np.array([
  [0, 0, 8, 0, 0, 0, 4, 0, 0],
  [0, 4, 0, 0, 0, 6, 0, 1, 0]])
 
-test_sudoku = np.array([
+test_sudoku2 = np.array([
  [0, 8, 5, 0, 1, 3, 0, 0, 9],
  [6, 3, 4, 0, 0, 2, 1, 7, 5,],
  [0, 2, 0, 5, 7, 4, 0, 3, 0,],
@@ -216,9 +215,10 @@ hardest_sudoku = np.array([
     [0,0,8,5,0,0,0,1,0],
     [0,9,0,0,0,0,4,0,0]])
 
-test_puzzle = sudoku_puzzle(hardest_sudoku)
+k = hardest_sudoku
+test_puzzle = sudoku_puzzle(k)
 test_puzzle.get_empty_cells()
 test_puzzle.to_print()
-print("\n",sudoku_solver(hardest_sudoku),"\n")
+print("\n",sudoku_solver(k),"\n")
 
 print( "solved in {} seconds".format( time.time() - start ) )
